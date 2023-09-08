@@ -1,6 +1,9 @@
 import React from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
 
 const Navbar = () => {
+  const location = useLocation();
+
   return (
     <div className="navbar bg-black bg-opacity-5 px-5">
       <div className="navbar-start">
@@ -26,14 +29,28 @@ const Navbar = () => {
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-200 rounded-box w-80"
           >
             <li>
-              <a className="text-xl font-bold font-mono text-[#38aefc] hover:text-[#102330]">
+              <NavLink
+                className={`${
+                  location.pathname !== "/home"
+                    ? "text-[#38aefc]"
+                    : "text-[rgb(16,35,48)]"
+                } text-xl font-bold text-[#38aefc] font-mono hover:text-[rgb(16,35,48)]`}
+                to="/home"
+              >
                 Home
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a className="text-xl font-bold font-mono text-[#38aefc] hover:text-[#102330]">
+              <NavLink
+                className={`${
+                  location.pathname !== "/service"
+                    ? "text-[#38aefc]"
+                    : "text-[rgb(16,35,48)]"
+                } text-xl font-bold text-[#38aefc] font-mono hover:text-[rgb(16,35,48)]`}
+                to="/service"
+              >
                 Service
-              </a>
+              </NavLink>
               <ul className="p-2 my-3 rounded bg-black bg-opacity-5">
                 <li>
                   <a className="text-[17px]">TAX Consultancy</a>
@@ -47,9 +64,16 @@ const Navbar = () => {
               </ul>
             </li>
             <li>
-              <a className="text-xl font-bold font-mono text-[#38aefc] hover:text-[#102330]">
+              <NavLink
+                className={`${
+                  location.pathname !== "/blog"
+                    ? "text-[#38aefc]"
+                    : "text-[rgb(16,35,48)]"
+                } text-xl font-bold text-[#38aefc] font-mono hover:text-[rgb(16,35,48)]`}
+                to="/blog"
+              >
                 Blog
-              </a>
+              </NavLink>
             </li>
           </ul>
         </div>
@@ -62,14 +86,30 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <a className="text-xl font-bold font-mono text-[#38aefc] hover:text-[#102330]">
+            <NavLink
+              className={`${
+                location.pathname !== "/home"
+                  ? "text-[#38aefc]"
+                  : "text-[rgb(16,35,48)]"
+              } text-xl font-bold text-[#38aefc] font-mono hover:text-[rgb(16,35,48)]`}
+              to="/home"
+            >
               Home
-            </a>
+            </NavLink>
           </li>
           <li tabIndex={0}>
             <details>
               <summary className="text-xl font-bold font-mono text-[#38aefc] hover:text-[#102330]">
-                Service
+                <NavLink
+                  className={`${
+                    location.pathname !== "/service"
+                      ? "text-[#38aefc]"
+                      : "text-[rgb(16,35,48)]"
+                  } text-xl font-bold text-[#38aefc] font-mono hover:text-[rgb(16,35,48)]`}
+                  to="/service"
+                >
+                  Service
+                </NavLink>
               </summary>
               <ul className="p-2 w-80 bg-black bg-opacity-10">
                 <li>
@@ -85,16 +125,30 @@ const Navbar = () => {
             </details>
           </li>
           <li>
-            <a className="text-xl font-bold font-mono text-[#38aefc] hover:text-[#102330]">
+            <NavLink
+              className={`${
+                location.pathname !== "/blog"
+                  ? "text-[#38aefc]"
+                  : "text-[rgb(16,35,48)]"
+              } text-xl font-bold text-[#38aefc] font-mono hover:text-[rgb(16,35,48)]`}
+              to="/blog"
+            >
               Blog
-            </a>
+            </NavLink>
           </li>
         </ul>
       </div>
       <div className="navbar-end">
-        <button className="text-xl font-bold font-mono text-[#38aefc] hover:text-[#102330]">
+        <NavLink
+          className={`${
+            location.pathname !== "/about"
+              ? "text-[#38aefc]"
+              : "text-[rgb(16,35,48)]"
+          } text-xl font-bold text-[#38aefc] font-mono hover:text-[rgb(16,35,48)]`}
+          to="/about"
+        >
           About Us
-        </button>
+        </NavLink>
       </div>
     </div>
   );
