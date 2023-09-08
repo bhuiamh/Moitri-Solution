@@ -5,7 +5,7 @@ const Navbar = () => {
   const location = useLocation();
 
   return (
-    <div className="navbar bg-black bg-opacity-5 px-5">
+    <div className="navbar bg-black bg-opacity-10 px-5">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -29,16 +29,12 @@ const Navbar = () => {
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-200 rounded-box w-80"
           >
             <li>
-              <NavLink
-                className={`${
-                  location.pathname !== "/home"
-                    ? "text-[#38aefc]"
-                    : "text-[rgb(16,35,48)]"
-                } text-xl font-bold text-[#38aefc] font-mono hover:text-[rgb(16,35,48)]`}
-                to="/home"
+              <Link
+                className="text-xl font-bold text-[#38aefc] font-mono hover:text-[rgb(16,35,48)]"
+                to="/"
               >
                 Home
-              </NavLink>
+              </Link>
             </li>
             <li>
               <NavLink
@@ -87,12 +83,10 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">
           <li>
             <NavLink
-              className={`${
-                location.pathname !== "/home"
-                  ? "text-[#38aefc]"
-                  : "text-[rgb(16,35,48)]"
-              } text-xl font-bold text-[#38aefc] font-mono hover:text-[rgb(16,35,48)]`}
-              to="/home"
+              className={
+                "text-xl font-bold text-[#38aefc] font-mono hover:text-[rgb(16,35,48)]"
+              }
+              to="/"
             >
               Home
             </NavLink>
